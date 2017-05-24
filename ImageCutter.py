@@ -110,38 +110,41 @@ def TrackbarCallBack(callBack):
 
 
 def DealWithCropped(imageCropped):
-        global hImage, sImage, vImage
-        global hsvThresImage
+    global hImage, sImage, vImage
+    global hsvThresImage
 
-        cv2.namedWindow("croppedImage")
-        cv2.imshow("croppedImage", imageCropped)
+    cv2.namedWindow("croppedImage")
+    cv2.imshow("croppedImage", imageCropped)
 
-        hsvImageCropped = cv2.cvtColor(imageCropped, cv2.COLOR_BGR2HSV)
-        hImage, sImage, vImage = cv2.split(hsvImageCropped)
+    hsvImageCropped = cv2.cvtColor(imageCropped, cv2.COLOR_BGR2HSV)
+    hImage, sImage, vImage = cv2.split(hsvImageCropped)
 
-        cv2.namedWindow("H")
-        cv2.createTrackbar("H_min", "H", 0, 180, TrackbarCallBack)
-        cv2.createTrackbar("H_max", "H", 180, 180, TrackbarCallBack)
-        cv2.imshow("H", hImage)
-        cv2.namedWindow("S")
-        cv2.createTrackbar("S_min", "S", 0, 255, TrackbarCallBack)
-        cv2.createTrackbar("S_max", "S", 255, 255, TrackbarCallBack)
-        cv2.imshow("S", sImage)
-        cv2.namedWindow("V")
-        cv2.createTrackbar("V_min", "V", 0, 255, TrackbarCallBack)
-        cv2.createTrackbar("V_max", "V", 255, 255, TrackbarCallBack)
-        cv2.imshow("V", vImage)
+    cv2.namedWindow("H")
+    cv2.createTrackbar("H_min", "H", 0, 180, TrackbarCallBack)
+    cv2.createTrackbar("H_max", "H", 180, 180, TrackbarCallBack)
+    cv2.imshow("H", hImage)
+    cv2.namedWindow("S")
+    cv2.createTrackbar("S_min", "S", 0, 255, TrackbarCallBack)
+    cv2.createTrackbar("S_max", "S", 255, 255, TrackbarCallBack)
+    cv2.imshow("S", sImage)
+    cv2.namedWindow("V")
+    cv2.createTrackbar("V_min", "V", 0, 255, TrackbarCallBack)
+    cv2.createTrackbar("V_max", "V", 255, 255, TrackbarCallBack)
+    cv2.imshow("V", vImage)
 
-        while True:
-            key = cv2.waitKey(0)
+    # Call it for once to simplify work flow
+    TrackbarCallBack(0)
 
-            if key == 32:  # Spacebar
-                CropImage(imageCropped)
-                break
+    while True:
+        key = cv2.waitKey(0)
 
-        cv2.destroyWindow("H")
-        cv2.destroyWindow("S")
-        cv2.destroyWindow("V")
+        if key == 32:  # Spacebar
+            CropImage(imageCropped)
+            break
+
+    cv2.destroyWindow("H")
+    cv2.destroyWindow("S")
+    cv2.destroyWindow("V")
 
 
 def main():

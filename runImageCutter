@@ -1,0 +1,4 @@
+for file in "Pictures"/*;
+do
+   python ImageCutter.py ${file##*/}
+done
