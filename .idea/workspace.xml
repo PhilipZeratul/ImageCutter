@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ea72c722-1f83-4131-a10a-8053f8a131b0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ImageCutter.py" afterPath="$PROJECT_DIR$/ImageCutter.py" />
-    </list>
+    <list default="true" id="ea72c722-1f83-4131-a10a-8053f8a131b0" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

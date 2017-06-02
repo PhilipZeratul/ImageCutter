@@ -1,3 +1,5 @@
-Pictures
-Cropped
-.DS_Store
+*
+
+!ImageCutter.py
+!runImageCutter
+!ImageCutter.ipynb

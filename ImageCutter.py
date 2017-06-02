@@ -173,7 +173,6 @@ def main():
 
     cv2.destroyAllWindows()
     cv2.waitKey(1)
-    cv2.destroyAllWindows()
 
 
 if __name__ == '__main__':
