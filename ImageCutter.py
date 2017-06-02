@@ -154,6 +154,7 @@ def main():
     SCALE = 0.3
 
     image = cv2.imread("Pictures/" + sys.argv[1])
+    print(sys.argv[1])
     image = cv2.resize(image, (0, 0), fx=SCALE, fy=SCALE, interpolation=cv2.INTER_AREA)
     imageClone = image.copy()
 
