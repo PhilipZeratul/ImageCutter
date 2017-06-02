@@ -13,21 +13,21 @@ def ClickAndCrop(event, x, y, flags, param):
         imageClone = image.copy()
         startPt = (x, y)
         isCropping = True
-        cv2.imshow("sourceImage", imageClone)
+        cv2.imshow(sys.argv[1], imageClone)
 
     elif event == cv2.EVENT_MOUSEMOVE:
         if isCropping:
             imageClone = image.copy()
             endPt = (x, y)
             cv2.rectangle(imageClone, startPt, endPt, (0, 255, 0), 2)
-            cv2.imshow("sourceImage", imageClone)
+            cv2.imshow(sys.argv[1], imageClone)
 
     elif event == cv2.EVENT_LBUTTONUP:
         imageClone = image.copy()
         endPt = (x, y)
         isCropping = False
         cv2.rectangle(imageClone, startPt, endPt, (0, 255, 0), 2)
-        cv2.imshow("sourceImage", imageClone)
+        cv2.imshow(sys.argv[1], imageClone)
 
 
 def CropImage(sourceImage):
@@ -158,9 +158,9 @@ def main():
     imageClone = image.copy()
 
     isCropping = False
-    cv2.namedWindow("sourceImage")
-    cv2.imshow("sourceImage", image)
-    cv2.setMouseCallback("sourceImage", ClickAndCrop)
+    cv2.namedWindow(sys.argv[1])
+    cv2.imshow(sys.argv[1], image)
+    cv2.setMouseCallback(sys.argv[1], ClickAndCrop)
 
     while True:
         key = cv2.waitKey(0)

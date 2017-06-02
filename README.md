@@ -9,3 +9,6 @@ $ python ImageCutter.py path/to/image.png
 4. Hit 'Space' on keyboard to get the threshold result and save image to disk.
 5. You can hit 'ESC' to reselect a rectangle.
 6. Hit 'ESC' to exit the application.
+
+
+runImageCutter is a shell script for running ImageCutter.py with all the images in Pictures folder.
